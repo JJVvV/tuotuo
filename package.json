@@ -34,11 +34,14 @@
     "eslint-plugin-react": "^2.3.0",
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "gulp":"3.8.11"
   },
   "dependencies": {
     "react": "^0.13.0",
     "react-router": "^0.13.3",
-    "reflux": "^0.2.7"
+    "reflux": "^0.2.7",
+    "lodash": "3.9.3",
+    "superagent":"1.2.0"
   }
 }
