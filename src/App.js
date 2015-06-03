@@ -3,11 +3,13 @@ var Router = require('react-router');
 
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
-
+var DefaultRoute = Router.DefaultRoute;
 var About = require('./components/test/about');
 var Home = require('./components/test/home');
 var Inbox = require('./components/test/inbox');
-
+var ItemDetail = require('./components/table/itemDetail');
+var Items = require('./components/table/items');
+var Form = require('./components/table/form');
 //export default class App extends Component {
 //
 //  render() {
@@ -38,7 +40,9 @@ var App = React.createClass({
         return(
             <div>
                 <h1>App</h1>
+
                 <RouteHandler />
+                <Form />
             </div>
         );
     }
@@ -47,13 +51,13 @@ var App = React.createClass({
 
 var routes = (
     <Route handler={App}>
-        <Route path="about" handler={About} />
-        <Route path="inbox" handler={Inbox} />
+        <Route  name="items" handler={Items} />
+        <Route name="itemDetail" path="item/:itemId" handler={ItemDetail} />
+        <DefaultRoute handler={Items} />
     </Route>
 );
 
 
 Router.run(routes, Router.HashLocation, function(Root){
-    debugger;
     React.render(<Root />, document.querySelector('#root'));
 });
