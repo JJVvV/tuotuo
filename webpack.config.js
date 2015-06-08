@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-
+console.log('***********************');
+console.log(path.join(__dirname, 'src'));
 module.exports = {
   devtool: 'eval',
   entry: [
@@ -9,7 +10,7 @@ module.exports = {
     './src/App'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'), //这是启用打包后生成的文件地址
     filename: 'bundle.js',
     publicPath: '/static/'
   },

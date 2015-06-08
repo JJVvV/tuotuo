@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+var React = require('react');
+var TableStore = require('./js/stores/table-store');
+var Reflux = require('reflux');
+var Actions = require('./js/actions/app-actions');
 var Router = require('react-router');
 
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var DefaultRoute = Router.DefaultRoute;
-var About = require('./components/test/about');
-var Home = require('./components/test/home');
-var Inbox = require('./components/test/inbox');
-var ItemDetail = require('./components/table/itemDetail');
-var Items = require('./components/table/items');
-var Form = require('./components/table/form');
+var About = require('./js/components/test/about');
+var Home = require('./js/components/test/home');
+var Inbox = require('./js/components/test/inbox');
+var ItemDetail = require('./js/components/table/itemDetail');
+var Items = require('./js/components/table/items');
+var Form = require('./js/components/table/form');
 //export default class App extends Component {
 //
 //  render() {
@@ -36,12 +39,20 @@ var Form = require('./components/table/form');
 //}
 
 var App = React.createClass({
+    mixins:[Reflux.connect(TableStore)],
+
+    componentDidMount(){
+
+
+
+        Actions.loadPage();
+    },
     render(){
         return(
             <div>
                 <h1>App</h1>
 
-                <RouteHandler />
+                <RouteHandler list={this.state.products} />
                 <Form />
             </div>
         );
@@ -51,7 +62,7 @@ var App = React.createClass({
 
 var routes = (
     <Route handler={App}>
-        <Route  name="items" handler={Items} />
+        <Route  name="items" handler={Items}></Route>
         <Route name="itemDetail" path="item/:itemId" handler={ItemDetail} />
         <DefaultRoute handler={Items} />
     </Route>
