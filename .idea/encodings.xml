@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/js/components/table/btn-status.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/js/components/table/edit-item.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/js/components/table/item.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/js/components/table/items.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/js/stores/table-store.js" charset="UTF-8" />
+  </component>
+</project>
